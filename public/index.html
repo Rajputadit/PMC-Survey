@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdZone — Patna Municipal Corporation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/trajan-pro" rel="stylesheet">
+    <style>
+        /* Full Page Fixed Background Photo */
+        .full-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                        url('event.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .gold-border-bottom {
+            border-bottom: 1.5px solid rgba(255, 215, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body class="full-bg text-white font-sans leading-relaxed min-h-screen">
+
+    <!-- 1. Transparent Navigation Bar -->
+    <nav class="bg-[#7E1906]/60 backdrop-blur-md text-white sticky top-0 z-50 shadow-2xl gold-border-bottom">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl drop-shadow">🪔</span>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold text-[#FFD700] font-['Trajan_Pro',serif] tracking-wider drop-shadow">AdZone — PMC</h1>
+                    <p class="text-xs text-amber-200 drop-shadow">Hoarding & Outdoor Media Management</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide drop-shadow">
+                <a href="#home" class="hover:text-[#FFD700] transition">Home</a>
+                <a href="#welcome" class="hover:text-[#FFD700] transition">About Visibility</a>
+                <a href="#services" class="hover:text-[#FFD700] transition">Media Types</a>
+                <a href="#contact" class="hover:text-[#FFD700] transition">Contact</a>
+            </div>
+
+            <div>
+                <a href="/survey" class="bg-[#FFD700]/90 hover:bg-[#FFD700] text-[#7E1906] font-bold px-5 py-2.5 rounded-lg transition shadow-lg text-sm sm:text-base border border-amber-300">
+                    Submit Survey / Form 📋
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Transparent Hero Section -->
+    <section id="home" class="py-16 md:py-28 px-4 text-center flex flex-col items-center justify-center min-h-[80vh]">
+        <div class="max-w-4xl mx-auto space-y-6">
+            
+            <!-- Badge -->
+            <span class="inline-block bg-[#7E1906]/70 backdrop-blur-md border border-[#FFD700] text-[#FFD700] px-5 py-2 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase shadow-lg">
+                Official PMC Advertising Portal
+            </span>
+
+            <!-- Main Welcome Heading -->
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold font-['Trajan_Pro',serif] text-[#FFD700] drop-shadow-2xl tracking-wide">
+                Welcome!
+            </h1>
+
+            <!-- Welcome Subtext -->
+            <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-100 drop-shadow-lg">
+                Ad Zone mein aapka dil se swagat hai. ❤️
+            </p>
+
+            <div class="w-32 h-1 bg-[#FFD700] mx-auto rounded-full my-4 drop-shadow"></div>
+
+            <!-- Value Proposition -->
+            <p class="text-lg sm:text-2xl md:text-3xl text-gray-100 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                Ab aapke brand ko milegi <span class="text-[#FFD700] font-bold">sahi visibility</span>, <span class="text-[#FFD700] font-bold">sahi audience</span> aur <span class="text-[#FFD700] font-bold">maximum impact</span>.
+            </p>
+
+            <!-- Call to Action Buttons -->
+            <div class="pt-8 flex flex-col sm:flex-row gap-5 justify-center items-center">
+                <a href="/survey" class="w-full sm:w-auto bg-[#7E1906]/80 hover:bg-[#7E1906] backdrop-blur-md text-[#FFD700] border-2 border-[#FFD700] font-bold px-9 py-4 rounded-xl text-lg sm:text-xl shadow-2xl transition transform hover:-translate-y-1">
+                    Let’s Get Started! 🚀
+                </a>
+                <a href="#welcome" class="w-full sm:w-auto bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 font-semibold px-8 py-4 rounded-xl text-lg transition shadow-lg">
+                    Explore Details
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. Glassmorphism Highlight Cards Section -->
+    <section id="welcome" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-[#FFD700] font-['Trajan_Pro',serif] drop-shadow-md">Why Choose AdZone PMC?</h2>
+                <p class="text-amber-100 mt-2 text-sm sm:text-base drop-shadow">Apne brand ko Patna ke har mukhya sthal par pahunchayein</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Glass Card 1 -->
+                <div class="p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 text-center space-y-4 hover:border-[#FFD700] transition transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-[#7E1906]/60 text-[#FFD700] border border-[#FFD700] text-3xl font-bold rounded-full flex items-center justify-center mx-auto shadow-md">
+                        🎯
+                    </div>
+                    <h3 class="text-xl font-bold text-[#FFD700]">Sahi Visibility</h3>
+                    <p class="text-sm text-gray-200 leading-relaxed">Patna ke sabse busy junctions aur highways par prime locations.</p>
+                </div>
+
+                <!-- Glass Card 2 -->
+                <div class="p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 text-center space-y-4 hover:border-[#FFD700] transition transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-[#7E1906]/60 text-[#FFD700] border border-[#FFD700] text-3xl font-bold rounded-full flex items-center justify-center mx-auto shadow-md">
+                        👥
+                    </div>
+                    <h3 class="text-xl font-bold text-[#FFD700]">Sahi Audience</h3>
+                    <p class="text-sm text-gray-200 leading-relaxed">Ward-wise targeted hoarding placements dwara sahi customers tak pahunch.</p>
+                </div>
+
+                <!-- Glass Card 3 -->
+                <div class="p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 text-center space-y-4 hover:border-[#FFD700] transition transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-[#7E1906]/60 text-[#FFD700] border border-[#FFD700] text-3xl font-bold rounded-full flex items-center justify-center mx-auto shadow-md">
+                        ⚡
+                    </div>
+                    <h3 class="text-xl font-bold text-[#FFD700]">Maximum Impact</h3>
+                    <p class="text-sm text-gray-200 leading-relaxed">Unipoles aur High-Def LED screens jo 24/7 aapke brand ko highlight rakhe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Transparent Survey Call to Action Banner -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center space-y-6 bg-[#7E1906]/50 backdrop-blur-md p-8 sm:p-12 rounded-3xl border border-[#FFD700]/50 shadow-2xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-[#FFD700] font-['Trajan_Pro',serif] drop-shadow-md">
+                Registered Agency / Owner Survey Form
+            </h2>
+            <p class="text-amber-100 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed drop-shadow">
+                Yadi aap PMC Registered Agency hain, toh kripya Bihar Municipal Act 2007 ke tehat hoarding data collection survey complete karein.
+            </p>
+            <a href="/survey" class="inline-block bg-[#FFD700] hover:bg-amber-300 text-[#7E1906] font-extrabold px-10 py-4 rounded-xl transition shadow-2xl text-lg border border-amber-400 transform hover:scale-105">
+                Start Survey Questionnaire Now 📋
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. Footer -->
+    <footer class="bg-black/60 backdrop-blur-md text-amber-200/80 py-8 px-4 border-t border-amber-500/30 text-center text-xs sm:text-sm">
+        <p>© 2026 AdZone — Patna Municipal Corporation (PMC). All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
