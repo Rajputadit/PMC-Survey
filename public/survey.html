@@ -6,518 +6,605 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdZone - PMC Hoarding Data Collection Survey</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/trajan-pro" rel="stylesheet">
+    
     <style>
-        .cultural-pattern-bg {
-            background-color: #724d21;
-            background-image: radial-gradient(#7E1906 0.75px, transparent 0.75px), radial-gradient(#7E1906 0.75px, #E28D27 0.75px);
-            background-size: 30px 30px;
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            font-family: sans-serif;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        .section-header {
-            background: linear-gradient(90deg, #7E1906 0%, #9E2108 100%);
-        }
+        /* Fixed Background Container - Continuous Full-Cover without Black Space */
+        /* .fixed-bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("event.png") no-repeat center center;
+            background-size: 100% 100%;
+        } */
 
+/* Plane BG*/
 
-        .cultural-pattern-bg {
-    background:
-        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-        url("Budha2.png");
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
-    min-height: 100vh;
-    width: 100%;
+/* .fixed-bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(-45deg, #220a3b, #44004a, #663743, #344875);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} */
+
+
+
+
+
+
+.fixed-bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* Dark Crimson-Gold Mesh Background */
+    background-color: #0f0a0d;
+    background-image: 
+        /* Cultural Warli & Abstract Scribble Patterns (SVG) */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23FFD700' stroke-opacity='0.15' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Warli Style Dancing Figure Scribble --%3E%3Ccircle cx='30' cy='20' r='3'/%3E%3Cpath d='M30 23 L25 35 L35 35 Z M25 35 L35 47 L25 47 Z M30 28 L20 22 M30 28 L40 22 M25 47 L20 58 M35 47 L40 58'/%3E%3C!-- Cultural Mandala/Sun Scribble --%3E%3Ccircle cx='90' cy='30' r='8' stroke-dasharray='2 2'/%3E%3Cpath d='M90 18 L90 14 M90 42 L90 46 M78 30 L74 30 M102 30 L106 30 M81 21 L78 18 M99 39 L102 42 M81 39 L78 42 M99 21 L102 18'/%3E%3C!-- Abstract Hand Scribble / Wave --%3E%3Cpath d='M10 80 Q 25 70, 40 80 T 70 80' stroke-width='1'/%3E%3Cpath d='M12 83 Q 27 73, 42 83 T 72 83' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C!-- Cultural Paisley / Kerchief Motif Scribble --%3E%3Cpath d='M85 80 C 75 70, 70 90, 85 100 C 95 100, 100 85, 85 80 Z'/%3E%3Cpath d='M85 80 C 88 75, 92 75, 90 70'/%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(circle at 50% 30%, rgba(126, 25, 6, 0.4) 0%, rgba(15, 10, 13, 0.95) 80%);
+    background-repeat: repeat, no-repeat;
+    background-size: 140px 140px, cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Special CSS for Inputs Autofill Translucency */
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="password"],
+        select,
+        textarea {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            color: #fff !important;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="tel"]:focus,
+        input[type="password"]:focus,
+        select:focus,
+        textarea:focus {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            outline: none !important;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+            -webkit-text-fill-color: #fff !important;
+            caret-color: #fff !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            accent-color: #7E1906;
+            border: 1px solid #FFD700;
+            background-color: transparent;
+        }
+
         .section-header {
-            background: linear-gradient(90deg, #7E1906 0%, #9E2108 100%);
+            background: rgba(126, 25, 6, 0.75) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Optional Glass Effect Enhancement */
+        .glass-box {
+            background: rgba(0, 0, 0, 0.3) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
     </style>
 </head>
 
-<body class="bg-[#E28D27] cultural-pattern-bg min-h-screen font-sans text-gray-800 pb-12">
+<body class="text-white">
 
-    <body
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Budha.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;"
-        class="min-h-screen font-sans text-gray-800 pb-12"></body>
+    <!-- Fixed Screen Background Image Layer -->
+    <div class="fixed-bg-layer"></div>
 
-    <!-- Top Header -->
-    <!-- Font Import Link (Add this inside <head> tag) -->
-    <link href="https://fonts.cdnfonts.com/css/trajan-pro" rel="stylesheet">
-
-    <!-- Header Code -->
-    <header
-        class="bg-transparent backdrop-blur-md text-white shadow-lg border-b border-[#FFD700]/50 sticky top-0 z-50 font-['Trajan_Pro',serif]">
+    <!-- Fully Transparent Glass Header -->
+    <header class="bg-black/30 backdrop-blur-md text-white shadow-2xl border-b border-[#FFD700]/40 sticky top-0 z-50 font-['Trajan_Pro',serif]">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logo & Portal Details -->
             <div class="flex items-center space-x-3">
-                <span class="text-3xl drop-shadow">🪔</span>
+                <span class="text-2xl sm:text-3xl drop-shadow-lg">🪔</span>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-[#FFD700] drop-shadow-md tracking-wider">AdZone —
-                        Patna Municipal Corporation</h1>
-                    <p class="text-xs text-amber-200/90 font-medium drop-shadow-sm tracking-wide">Hoarding & Agency Data
-                        Collection Questionnaire (Ward-wise Survey)</p>
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-[#FFD700] drop-shadow-md tracking-wider">
+                        AdZone — Patna Municipal Corporation
+                    </h1>
+                    <p class="text-[10px] sm:text-xs text-amber-200/90 font-medium drop-shadow-sm tracking-wide">
+                        Hoarding & Agency Data Collection Questionnaire (Ward-wise Survey)
+                    </p>
                 </div>
             </div>
-            <div class="hidden md:block text-right text-xs text-amber-200/90 drop-shadow-sm tracking-wide">
-                <p class="font-medium">Bihar Municipal Act, 2007</p>
-                <p class="font-bold text-[#FFD700]">Official Portal</p>
+
+            <!-- Right Side: Act Info + Back to Home Button -->
+            <div class="flex items-center space-x-4">
+                <div class="hidden lg:block text-right text-xs text-amber-200/90 drop-shadow-sm tracking-wide">
+                    <p class="font-medium">Bihar Municipal Act, 2007</p>
+                    <p class="font-bold text-[#FFD700]">Official Portal</p>
+                </div>
+
+                <!-- Home Page Link Button -->
+                <a href="/" class="bg-[#7E1906]/70 hover:bg-[#7E1906] backdrop-blur-md border border-[#FFD700] text-[#FFD700] font-bold px-3 py-1.5 rounded-lg text-xs transition shadow-lg inline-flex items-center gap-1 hover:scale-105 transform">
+                    <span>←</span> Back
+                </a>
             </div>
+
         </div>
     </header>
-    <!-- Sub Banner (Semi-Transparent) -->
-    <!-- <div class="bg-[#56620A]/80 backdrop-blur-sm text-white py-2 text-center text-xs font-semibold border-b border-amber-300">
-    ✨ Festival Season Cultural Survey Theme & Agency Audit Portal ✨
-</div> -->
 
-    <!-- Sanskrit Shlokas Banner -->
-    <br>
-    <br>
-  
-
-    <!-- Form Container (Glassmorphism Semi-Transparent) -->
-    <div
-        class="max-w-5xl mx-auto my-8 bg-[#fffff]/85 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden border-2 border-[#000000]">
+    <!-- Form Container (Fully Transparent Glass) -->
+    <div class="max-w-5xl mx-auto my-8 bg-black/20 backdrop-blur-md rounded-xl overflow-hidden border-2 border-[#FFD700]/50 shadow-2xl">
         <main class="p-4 md:p-8">
 
+            <form id="surveyForm" class="w-full max-w-5xl mx-auto space-y-4 md:space-y-6 px-2 sm:px-4 py-4 font-['Trajan_Pro',serif]">
 
-
-            <!-- Trajan Pro Font Link -->
-            <<!-- Trajan Pro Font Link -->
-                <link href="https://fonts.cdnfonts.com/css/trajan-pro" rel="stylesheet">
-
-<form id="surveyForm" class="w-full max-w-5xl mx-auto space-y-4 md:space-y-6 px-2 sm:px-4 py-4 font-['Trajan_Pro',serif]">
-
-    <!-- Meta Header Info -->
-    <div class="bg-transparent p-3 sm:p-5 rounded-lg border border-amber-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 text-sm font-bold text-[#7E1906] items-end">
-    <!-- Field 1 -->
-    <div class="flex flex-col justify-between h-full">
-        <label class="block text-gray-900 mb-1.5 font-bold text-xs sm:text-sm md:text-base">Reference No. / संदर्भ संख्या:</label>
-        <input type="text" name="refNo" placeholder="Enter Ref No." class="w-full bg-[#ffffff]/40 backdrop-blur-sm border border-amber-400 p-2 sm:p-3 rounded text-black placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-    </div>
-
-    <!-- Field 2 -->
-    <div class="flex flex-col justify-between h-full">
-        <label class="block text-gray-900 mb-1.5 font-bold text-xs sm:text-sm md:text-base">Date / दिनांक:</label>
-        <input type="date" name="surveyDate" class="w-full bg-[#ffffff]/40 backdrop-blur-sm border border-amber-400 p-2 sm:p-3 rounded text-black text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-    </div>
-
-    <!-- Field 3 -->
-    <div class="flex flex-col justify-between h-full">
-        <label class="block text-gray-900 mb-1.5 font-bold text-xs sm:text-sm md:text-base">Ward No. / वार्ड संख्या:</label>
-        <input type="text" name="wardNo" placeholder="Ward No." class="w-full bg-[#ffffff]/40 backdrop-blur-sm border border-amber-400 p-2 sm:p-3 rounded text-black placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-    </div>
-
-    <!-- Field 4 -->
-    <div class="flex flex-col justify-between h-full">
-        <label class="block text-gray-900 mb-1.5 font-bold text-xs sm:text-sm md:text-base">Zone / अंचल (A/B/C/D):</label>
-        <select name="zone" class="w-full bg-[#ffffff]/40 backdrop-blur-sm border border-amber-400 p-2 sm:p-3 rounded text-black text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            <option class="text-black">Zone A / अंचल A</option>
-            <option class="text-black">Zone B / अंचल B</option>
-            <option class="text-black">Zone C / अंचल C</option>
-            <option class="text-black">Zone D / अंचल D</option>
-        </select>
-    </div>
-</div>
-    <!-- SECTION A -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section A — Agency / Applicant KYC Details (एजेंसी / आवेदक के विवरण)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">1. Name of the Advertising Agency / Hoarding Owner (as per registration) / विज्ञापन एजेंसी / होर्डिंग मालिक का नाम (पंजीकरण के अनुसार):</label>
-                <input type="text" name="agencyName" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">2. Type of business entity / व्यवसाय का प्रकार:</label>
-                <select name="businessType" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">Proprietorship / एकल स्वामित्व</option>
-                    <option class="text-black">Partnership / साझेदारी</option>
-                    <option class="text-black">Pvt. Ltd. Co. / प्राइवेट लिमिटेड कंपनी</option>
-                    <option class="text-black">Other / अन्य</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">3. Registered office address of the agency / एजेंसी का पंजीकृत कार्यालय पता:</label>
-                <input type="text" name="registeredOfficeAddress" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <!-- GST Number -->
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">4. GST Registration Number (15 Digit) / जीएसटी पंजीकरण संख्या (15 अंक):</label>
-                <input type="text" id="gstInput" name="gstNumber" maxlength="15" placeholder="22AAAAA0000A1Z5" oninput="formatGST(this)" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded uppercase tracking-wider placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <!-- PAN Number -->
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">5. PAN Number (10 Digit) / पैन कार्ड संख्या (10 अंक):</label>
-                <input type="text" id="panInput" name="panNumber" maxlength="10" placeholder="ABCDE1234F" oninput="formatPAN(this)" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded uppercase tracking-wider placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">6. Name & Designation of Contact Person / संपर्क व्यक्ति का नाम एवं पद:</label>
-                <input type="text" name="contactPersonName" placeholder="Name & Designation" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <!-- Mobile Number -->
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">6 (a). Mobile Number (10 Digits Only) / मोबाइल नंबर (केवल 10 अंक):</label>
-                <input type="text" name="mobileNumber" maxlength="10" placeholder="9876543210" oninput="formatPhone(this)" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">6 (b). Email Address / ईमेल आईडी:</label>
-                <input type="email" name="email" placeholder="example@domain.com" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION B -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section B — Site Identification (स्थल की पहचान / लोकेशन)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">7. Exact address / location of the hoarding site / होर्डिंग स्थल का सटीक पता:</label>
-                <input type="text" name="siteAddress" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">8. GPS coordinates (Lat, Long) / जीपीएस निर्देशांक:</label>
-                <input type="text" name="gpsCoordinates" placeholder="25.5941, 85.1376" oninput="formatGPS(this)" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">9. Nearest landmark / निकटतम लैंडमार्क (लैंडमार्क चिह्न):</label>
-                <input type="text" name="nearestLandmark" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">10. Land ownership at site / स्थल पर भूमि का स्वामित्व:</label>
-                <select name="landOwnership" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">Public / Government (सरकारी/सार्वजनिक)</option>
-                    <option class="text-black">Private (निजी)</option>
-                    <option class="text-black">Disputed / Unclear (विवादित/अस्पष्ट)</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">11. Existing QR-coded identification tag number / मौजूदा क्यूआर-कोड टैग संख्या:</label>
-                <input type="text" name="qrTagNumber" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION C -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section C — Structure & Technical Specifications (संरचना एवं तकनीकी विवरण)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">12. Type of structure / संरचना का प्रकार:</label>
-                <select name="structureType" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">Hoarding / होर्डिंग</option>
-                    <option class="text-black">Unipole / यूनिपोल</option>
-                    <option class="text-black">Gantry / गैंट्री</option>
-                    <option class="text-black">Wall-mounted / दीवार पर लगा हुआ</option>
-                    <option class="text-black">LED/Digital Display / डिजिटल बोर्ड</option>
-                    <option class="text-black">Banner / बैनर</option>
-                    <option class="text-black">Other / अन्य</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">13. Dimensions (Height × Width, ft) / आयाम (ऊंचाई × चौड़ाई, फीट):</label>
-                <input type="text" name="dimensions" placeholder="e.g. 20 x 10" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">14. Total height from ground level (ft) / जमीनी स्तर से कुल ऊंचाई (फीट):</label>
-                <input type="text" name="totalHeightFt" oninput="formatNumbersOnly(this)" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">15. Number of display faces / डिस्प्ले साइड्स (साइड्स की संख्या):</label>
-                <select name="displayFaces" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">Single-sided / एक तरफा</option>
-                    <option class="text-black">Double-sided / दो तरफा</option>
-                    <option class="text-black">Triple-sided / तीन तरफा</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">16. Material of structure / ढांचे की निर्माण सामग्री:</label>
-                <select name="material" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">MS/Steel Frame / एमएस या स्टील फ्रेम</option>
-                    <option class="text-black">Wood / लकड़ी</option>
-                    <option class="text-black">Aluminium / एल्युमीनियम</option>
-                    <option class="text-black">Other / अन्य</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">17. Approximate age (years) / अनुमानित आयु (वर्षों में):</label>
-                <input type="text" name="approxAgeYears" oninput="formatNumbersOnly(this)" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION D -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section D — Legal & Licensing Details (कानूनी एवं लाइसेंस विवरण)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-5 sm:gap-6">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">18. Valid PMC advertisement licence? / वैध पटना नगर निगम लाइसेंस है?</label>
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center mt-2">
-                    <div class="flex gap-6 items-center">
-                        <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasPmcLicence" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> Yes / हाँ</label>
-                        <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasPmcLicence" value="No" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> No / नहीं</label>
+                <!-- Meta Header Info -->
+                <div class="glass-box p-3 sm:p-5 rounded-lg border border-amber-300/60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 text-sm font-bold items-end">
+                    <!-- Field 1 -->
+                    <div class="flex flex-col justify-between h-full">
+                        <label class="block text-amber-50 drop-shadow-md mb-1.5 font-bold text-xs sm:text-sm md:text-base">Reference No. / संदर्भ संख्या:</label>
+                        <input type="text" name="refNo" placeholder="Enter Ref No." class="w-full border border-amber-400 p-2 sm:p-3 rounded text-white placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
                     </div>
-                    <input type="text" name="licenceNo" placeholder="Licence No. / लाइसेंस नं." class="p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded w-full sm:w-1/2 placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                </div>
-            </div>
 
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">19. Licence Dates (Issue & Expiry) / लाइसेंस की तिथि (जारी एवं समाप्ति):</label>
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
-                    <input type="date" name="licenceIssueDate" class="p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded w-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <input type="date" name="licenceExpiryDate" class="p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded w-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                </div>
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">20. Signed agreement with site owner / PMC? / क्या अनुबंध (Agreement) हस्ताक्षरित है?</label>
-                <div class="flex gap-6 items-center mt-2">
-                    <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementSigned" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> Yes / हाँ</label>
-                    <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementSigned" value="No" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> No / नहीं</label>
-                </div>
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">21. Date of execution of agreement / इकरारनामा निष्पादन की तिथि:</label>
-                <input type="date" name="agreementExecutionDate" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">22. Has agreement/licence been extended? / क्या लाइसेंस/इकरारनामा विस्तारित किया गया है?</label>
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center mt-2">
-                    <div class="flex gap-6 items-center">
-                        <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementExtended" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> Yes / हाँ</label>
-                        <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementExtended" value="No" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> No / नहीं</label>
+                    <!-- Field 2 -->
+                    <div class="flex flex-col justify-between h-full">
+                        <label class="block text-amber-50 drop-shadow-md mb-1.5 font-bold text-xs sm:text-sm md:text-base">Date / दिनांक:</label>
+                        <input type="date" name="surveyDate" class="w-full border border-amber-400 p-2 sm:p-3 rounded text-white text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
                     </div>
-                    <input type="text" name="extensionDetails" placeholder="Extension Ref & Date / विवरण" class="p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded w-full sm:w-1/2 placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
+
+                    <!-- Field 3 -->
+                    <div class="flex flex-col justify-between h-full">
+                        <label class="block text-amber-50 drop-shadow-md mb-1.5 font-bold text-xs sm:text-sm md:text-base">Ward No. / वार्ड संख्या:</label>
+                        <input type="text" name="wardNo" placeholder="Ward No." class="w-full border border-amber-400 p-2 sm:p-3 rounded text-white placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                    </div>
+
+                    <!-- Field 4 -->
+                    <div class="flex flex-col justify-between h-full">
+                        <label class="block text-amber-50 drop-shadow-md mb-1.5 font-bold text-xs sm:text-sm md:text-base">Zone / अंचल (A/B/C/D):</label>
+                        <select name="zone" class="w-full border border-amber-400 p-2 sm:p-3 rounded text-white text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                            <option class="text-black">Zone A / अंचल A</option>
+                            <option class="text-black">Zone B / अंचल B</option>
+                            <option class="text-black">Zone C / अंचल C</option>
+                            <option class="text-black">Zone D / अंचल D</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SECTION A -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section A — Agency / Applicant KYC Details (एजेंसी / आवेदक के विवरण)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">1. Name of the Advertising Agency / Hoarding Owner (as per registration) / विज्ञापन एजेंसी / होर्डिंग मालिक का नाम (पंजीकरण के अनुसार):</label>
+                            <input type="text" name="agencyName" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">2. Type of business entity / व्यवसाय का प्रकार:</label>
+                            <select name="businessType" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">Proprietorship / एकल स्वामित्व</option>
+                                <option class="text-black">Partnership / साझेदारी</option>
+                                <option class="text-black">Pvt. Ltd. Co. / प्राइवेट लिमिटेड कंपनी</option>
+                                <option class="text-black">Other / अन्य</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">3. Registered office address of the agency / एजेंसी का पंजीकृत कार्यालय पता:</label>
+                            <input type="text" name="registeredOfficeAddress" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <!-- GST Number -->
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">4. GST Registration Number (15 Digit) / जीएसटी पंजीकरण संख्या (15 अंक):</label>
+                            <input type="text" id="gstInput" name="gstNumber" maxlength="15" placeholder="22AAAAA0000A1Z5" oninput="formatGST(this)" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded uppercase tracking-wider placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <!-- PAN Number -->
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">5. PAN Number (10 Digit) / पैन कार्ड संख्या (10 अंक):</label>
+                            <input type="text" id="panInput" name="panNumber" maxlength="10" placeholder="ABCDE1234F" oninput="formatPAN(this)" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded uppercase tracking-wider placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">6. Name & Designation of Contact Person / संपर्क व्यक्ति का नाम एवं पद:</label>
+                            <input type="text" name="contactPersonName" placeholder="Name & Designation" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">6 (a). Mobile Number (10 Digits Only) / मोबाइल नंबर (केवल 10 अंक):</label>
+                            <input type="text" name="mobileNumber" maxlength="10" placeholder="9876543210" oninput="formatPhone(this)" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">6 (b). Email Address / ईमेल आईडी:</label>
+                            <input type="email" name="email" placeholder="example@domain.com" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION B -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section B — Site Identification (स्थल की पहचान / लोकेशन)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">7. Exact address / location of the hoarding site / होर्डिंग स्थल का सटीक पता:</label>
+                            <input type="text" name="siteAddress" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">8. GPS coordinates (Lat, Long) / जीपीएस निर्देशांक:</label>
+                            <input type="text" name="gpsCoordinates" placeholder="25.5941, 85.1376" oninput="formatGPS(this)" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">9. Nearest landmark / निकटतम लैंडमार्क (लैंडमार्क चिह्न):</label>
+                            <input type="text" name="nearestLandmark" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">10. Land ownership at site / स्थल पर भूमि का स्वामित्व:</label>
+                            <select name="landOwnership" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">Public / Government (सरकारी/सार्वजनिक)</option>
+                                <option class="text-black">Private (निजी)</option>
+                                <option class="text-black">Disputed / Unclear (विवादित/अस्पष्ट)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">11. Existing QR-coded identification tag number / मौजूदा क्यूआर-कोड टैग संख्या:</label>
+                            <input type="text" name="qrTagNumber" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION C -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section C — Structure & Technical Specifications (संरचना एवं तकनीकी विवरण)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">12. Type of structure / संरचना का प्रकार:</label>
+                            <select name="structureType" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">Hoarding / होर्डिंग</option>
+                                <option class="text-black">Unipole / यूनिपोल</option>
+                                <option class="text-black">Gantry / गैंट्री</option>
+                                <option class="text-black">Wall-mounted / दीवार पर लगा हुआ</option>
+                                <option class="text-black">LED/Digital Display / डिजिटल बोर्ड</option>
+                                <option class="text-black">Banner / बैनर</option>
+                                <option class="text-black">Other / अन्य</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">13. Dimensions (Height × Width, ft) / आयाम (ऊंचाई × चौड़ाई, फीट):</label>
+                            <input type="text" name="dimensions" placeholder="e.g. 20 x 10" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">14. Total height from ground level (ft) / जमीनी स्तर से कुल ऊंचाई (फीट):</label>
+                            <input type="text" name="totalHeightFt" oninput="formatNumbersOnly(this)" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">15. Number of display faces / डिस्प्ले साइड्स (साइड्स की संख्या):</label>
+                            <select name="displayFaces" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">Single-sided / एक तरफा</option>
+                                <option class="text-black">Double-sided / दो तरफा</option>
+                                <option class="text-black">Triple-sided / तीन तरफा</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">16. Material of structure / ढांचे की निर्माण सामग्री:</label>
+                            <select name="material" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">MS/Steel Frame / एमएस या स्टील फ्रेम</option>
+                                <option class="text-black">Wood / लकड़ी</option>
+                                <option class="text-black">Aluminium / एल्युमीनियम</option>
+                                <option class="text-black">Other / अन्य</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">17. Approximate age (years) / अनुमानित आयु (वर्षों में):</label>
+                            <input type="text" name="approxAgeYears" oninput="formatNumbersOnly(this)" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION D -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section D — Legal & Licensing Details (कानूनी एवं लाइसेंस विवरण)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-5 sm:gap-6">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">18. Valid PMC advertisement licence? / वैध पटना नगर निगम लाइसेंस है?</label>
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center mt-2">
+                                <div class="flex gap-6 items-center">
+                                    <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasPmcLicence" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5"> Yes / हाँ</label>
+                                    <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasPmcLicence" value="No" class="h-4 sm:h-5 w-4 sm:w-5"> No / नहीं</label>
+                                </div>
+                                <input type="text" name="licenceNo" placeholder="Licence No. / लाइसेंस नं." class="p-2.5 sm:p-3 border border-amber-300/60 rounded w-full sm:w-1/2 placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">19. Licence Dates (Issue & Expiry) / लाइसेंस की तिथि (जारी एवं समाप्ति):</label>
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
+                                <input type="date" name="licenceIssueDate" class="p-2.5 sm:p-3 border border-amber-300/60 rounded w-full text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <input type="date" name="licenceExpiryDate" class="p-2.5 sm:p-3 border border-amber-300/60 rounded w-full text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">20. Signed agreement with site owner / PMC? / क्या अनुबंध (Agreement) हस्ताक्षरित है?</label>
+                            <div class="flex gap-6 items-center mt-2">
+                                <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementSigned" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5"> Yes / हाँ</label>
+                                <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementSigned" value="No" class="h-4 sm:h-5 w-4 sm:w-5"> No / नहीं</label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">21. Date of execution of agreement / इकरारनामा निष्पादन की तिथि:</label>
+                            <input type="date" name="agreementExecutionDate" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">22. Has agreement/licence been extended? / क्या लाइसेंस/इकरारनामा विस्तारित किया गया है?</label>
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center mt-2">
+                                <div class="flex gap-6 items-center">
+                                    <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementExtended" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5"> Yes / हाँ</label>
+                                    <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="agreementExtended" value="No" class="h-4 sm:h-5 w-4 sm:w-5"> No / नहीं</label>
+                                </div>
+                                <input type="text" name="extensionDetails" placeholder="Extension Ref & Date / विवरण" class="p-2.5 sm:p-3 border border-amber-300/60 rounded w-full sm:w-1/2 placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">23. Fee paid — amount & date / भुगतान किया गया शुल्क — राशि एवं तिथि:</label>
+                            <input type="text" name="feePaidDetails" placeholder="Amount & Date / राशि और तिथि" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION E -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section E — Structural Safety (संरचनात्मक सुरक्षा)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">24. Structural safety certificate held? / सुरक्षा प्रमाणपत्र उपलब्ध है?</label>
+                            <div class="flex gap-6 items-center mb-3">
+                                <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasStructuralCertificate" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5"> Yes / हाँ</label>
+                                <label class="text-amber-50 drop-shadow-md font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasStructuralCertificate" value="No" class="h-4 sm:h-5 w-4 sm:w-5"> No / नहीं</label>
+                            </div>
+                            <input type="text" name="engineerAgencyName" placeholder="Engineer/Agency Name / इंजीनियर या एजेंसी का नाम" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">25. Date of last inspection / अंतिम निरीक्षण की तिथि:</label>
+                            <input type="date" name="lastInspectionDate" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION F -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section F — Illumination & Power (प्रकाश एवं विद्युत)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">26. Lighting type / प्रकाश का प्रकार:</label>
+                            <select name="lightingType" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">Solar / सोलर</option>
+                                <option class="text-black">Normal Electric (grid) / सामान्य बिजली</option>
+                                <option class="text-black">LED / एलईडी</option>
+                                <option class="text-black">Not Illuminated / बिना प्रकाश</option>
+                                <option class="text-black">Other / अन्य</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">27. Power consumption / बिजली की खपत (मासिक/यूनिट):</label>
+                            <input type="text" name="powerConsumption" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">28. Power source / विद्युत कनेक्शन का स्रोत:</label>
+                            <select name="powerSource" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                                <option class="text-black">Dedicated meter / अलग मीटर</option>
+                                <option class="text-black">Shared connection / साझा कनेक्शन</option>
+                                <option class="text-black">Solar panel / सोलर पैनल</option>
+                                <option class="text-black">Other / अन्य</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION G -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Section G — Commercial Details (व्यावसायिक विवरण)
+                    </div>
+                    <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">29. Current Brand Displayed / प्रदर्शित ब्रांड का नाम:</label>
+                            <input type="text" name="currentBrandDisplayed" placeholder="Write 'Vacant' if blank" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1.5 text-amber-50 drop-shadow-md text-xs sm:text-sm md:text-base">30. Monthly/Annual rental fee / मासिक/वार्षिक किराया शुल्क:</label>
+                            <input type="text" name="rentalFee" placeholder="Fee amount / शुल्क राशि" class="w-full p-2.5 sm:p-3 border border-amber-300/60 rounded placeholder-gray-300 text-xs sm:text-sm focus:ring-2 focus:ring-[#FFD700] transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DOCUMENT ATTACHMENT CHECKLIST (Responsive Table) -->
+                <section class="glass-box rounded-lg shadow-sm border border-amber-300/50 overflow-hidden">
+                    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base tracking-wide border-b border-amber-300/30">
+                        Document Upload / Attachment Checklist (दस्तावेज़ संलग्न सूची)
+                    </div>
+                    <div class="p-2 sm:p-5 overflow-x-auto">
+                        <table class="w-full text-left text-xs sm:text-sm border-collapse text-amber-50 drop-shadow-md min-w-[500px]">
+                            <thead>
+                                <tr class="bg-black/30 text-[#FFD700] font-bold border-b border-amber-300/40 text-xs sm:text-sm md:text-base">
+                                    <th class="p-2 sm:p-3 border border-amber-300/40 w-12 text-center">S.N</th>
+                                    <th class="p-2 sm:p-3 border border-amber-300/40">Document Required / आवश्यक दस्तावेज़</th>
+                                    <th class="p-2 sm:p-3 border border-amber-300/40 text-center w-20">Attached?</th>
+                                    <th class="p-2 sm:p-3 border border-amber-300/40">Upload File / फ़ाइल</th>
+                                </tr>
+                            </thead>
+                            <tbody class="hover:bg-white/5 transition border-b border-white/10 text-white">
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">1</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Copy of signed Agreement (हस्ताक्षरित इकरारनामा की प्रति)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_1" onclick="handleCheckboxClick(1, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_1" name="file_1" onchange="autoTickCheck(1, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">2</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Date of Agreement Proof (इकरारनामा निष्पादन तिथि प्रमाण)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_2" onclick="handleCheckboxClick(2, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_2" name="file_2" onchange="autoTickCheck(2, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">3</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Extension Claim document (लाइसेंस विस्तार संबंधी दस्तावेज़)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_3" onclick="handleCheckboxClick(3, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_3" name="file_3" onchange="autoTickCheck(3, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">4</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Photograph of the hoarding site (होर्डिंग/स्थल का वर्तमान स्पष्ट चित्र)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_4" onclick="handleCheckboxClick(4, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_4" name="file_4" onchange="autoTickCheck(4, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">5</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Copy of PMC Licence (पटना नगर निगम विज्ञापन लाइसेंस की प्रति)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_5" onclick="handleCheckboxClick(5, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_5" name="file_5" onchange="autoTickCheck(5, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">6</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Structural Safety Certificate (संरचनात्मक सुरक्षा प्रमाणपत्र)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_6" onclick="handleCheckboxClick(6, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_6" name="file_6" onchange="autoTickCheck(6, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">7</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Agency KYC PAN Card (एजेंसी का पैन कार्ड)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_7" onclick="handleCheckboxClick(7, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_7" name="file_7" onchange="autoTickCheck(7, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">8</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">GST Registration Certificate (जीएसटी पंजीकरण प्रमाणपत्र)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_8" onclick="handleCheckboxClick(8, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_8" name="file_8" onchange="autoTickCheck(8, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">9</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Company Registration Certificate (कंपनी/फर्म पंजीकरण प्रमाणपत्र)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_9" onclick="handleCheckboxClick(9, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_9" name="file_9" onchange="autoTickCheck(9, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">10</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Registered Address Proof (पंजीकृत कार्यालय पते का प्रमाण)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_10" onclick="handleCheckboxClick(10, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_10" name="file_10" onchange="autoTickCheck(10, this)" class="w-full text-xs bg-transparent"></td></tr>
+                                <tr class="bg-transparent hover:bg-white/10 transition"><td class="p-2 sm:p-3 border border-amber-300/40 font-bold text-center">11</td><td class="p-2 sm:p-3 border border-amber-300/40 font-semibold">Authorised Signatory ID Proof (अधिकृत हस्ताक्षरकर्ता का पहचान पत्र)</td><td class="p-2 sm:p-3 border border-amber-300/40 text-center"><input type="checkbox" id="check_11" onclick="handleCheckboxClick(11, this)" class="h-4 sm:h-5 w-4 sm:w-5 cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300/40"><input type="file" id="file_11" name="file_11" onchange="autoTickCheck(11, this)" class="w-full text-xs bg-transparent"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- DECLARATION & SUBMISSION -->
+                <section class="glass-box p-3 sm:p-5 rounded-lg border border-amber-300/50 space-y-4 sm:space-y-5">
+                    <div class="flex items-start space-x-3 text-xs sm:text-sm p-3 sm:p-4 rounded-lg">
+                        <input type="checkbox" name="declarationAccepted" required class="mt-1 h-4 sm:h-5 w-4 sm:w-5 cursor-pointer">
+                        <label class="text-amber-50 drop-shadow-md font-medium leading-relaxed">
+                            <strong>Declaration / घोषणा:</strong> I/We hereby declare that the information and documents furnished above are true and correct to the best of my/our knowledge. I/We understand that any hoarding for which this questionnaire and required documents are not submitted within the stipulated time may be treated as unauthorised/illegal under the <strong>Bihar Municipal Act, 2007</strong>.<br><br>
+                            (मैं/हम एतद्द्वारा घोषणा करते हैं कि ऊपर दी गई जानकारी और दस्तावेज़ मेरी/हमारी सर्वोत्तम जानकारी के अनुसार सत्य और सही हैं। मैं/हम समझते हैं कि जिस होर्डिंग के लिए यह प्रश्नावली और आवश्यक दस्तावेज़ निर्धारित समय के भीतर जमा नहीं किए जाते हैं, उसे <strong>बिहार नगरपालिका अधिनियम, 2007</strong> के तहत अनधिकृत/अवैध माना जा सकता है।)
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-[#7E1906]/80 hover:bg-[#7E1906] backdrop-blur-md text-[#FFD700] font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg shadow-xl transition text-base sm:text-lg border border-amber-400 tracking-wider">
+                        Submit Survey Questionnaire / सर्वेक्षण प्रश्नावली जमा करें 🚩
+                    </button>
+                </section>
+
+            </form>
+
+            <!-- Success / Error Popup Modal -->
+            <div id="statusModalOverlay" npm ">
+                <div class="bg-white rounded-xl shadow-2xl max-w-sm w-full p-6 sm:p-8 text-center border-2 border-amber-400 transform transition-all">
+                    <div id="statusModalIcon" class="text-5xl sm:text-6xl mb-3"></div>
+                    <h3 id="statusModalTitle" class="text-lg sm:text-xl font-bold mb-2 text-gray-900"></h3>
+                    <p id="statusModalMessage" class="text-sm sm:text-base text-gray-700 mb-5"></p>
+                    <button id="statusModalCloseBtn" class="bg-[#7E1906] hover:bg-[#9E2108] text-[#FFD700] font-bold py-2.5 px-6 rounded-lg shadow-md transition tracking-wide">
+                        OK
+                    </button>
                 </div>
             </div>
 
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">23. Fee paid — amount & date / भुगतान किया गया शुल्क — राशि एवं तिथि:</label>
-                <input type="text" name="feePaidDetails" placeholder="Amount & Date / राशि और तिथि" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION E -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section E — Structural Safety (संरचनात्मक सुरक्षा)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">24. Structural safety certificate held? / सुरक्षा प्रमाणपत्र उपलब्ध है?</label>
-                <div class="flex gap-6 items-center mb-3">
-                    <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasStructuralCertificate" value="Yes" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> Yes / हाँ</label>
-                    <label class="text-gray-900 font-bold text-xs sm:text-sm flex items-center gap-2"><input type="radio" name="hasStructuralCertificate" value="No" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906]"> No / नहीं</label>
-                </div>
-                <input type="text" name="engineerAgencyName" placeholder="Engineer/Agency Name / इंजीनियर या एजेंसी का नाम" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">25. Date of last inspection / अंतिम निरीक्षण की तिथि:</label>
-                <input type="date" name="lastInspectionDate" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION F -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section F — Illumination & Power (प्रकाश एवं विद्युत)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">26. Lighting type / प्रकाश का प्रकार:</label>
-                <select name="lightingType" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">Solar / सोलर</option>
-                    <option class="text-black">Normal Electric (grid) / सामान्य बिजली</option>
-                    <option class="text-black">LED / एलईडी</option>
-                    <option class="text-black">Not Illuminated / बिना प्रकाश</option>
-                    <option class="text-black">Other / अन्य</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">27. Power consumption / बिजली की खपत (मासिक/यूनिट):</label>
-                <input type="text" name="powerConsumption" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">28. Power source / विद्युत कनेक्शन का स्रोत:</label>
-                <select name="powerSource" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-                    <option class="text-black">Dedicated meter / अलग मीटर</option>
-                    <option class="text-black">Shared connection / साझा कनेक्शन</option>
-                    <option class="text-black">Solar panel / सोलर पैनल</option>
-                    <option class="text-black">Other / अन्य</option>
-                </select>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION G -->
-    <section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-        <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-            Section G — Commercial Details (व्यावसायिक विवरण)
-        </div>
-        <div class="p-3 sm:p-5 grid grid-cols-1 gap-4 sm:gap-5">
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">29. Current Brand Displayed / प्रदर्शित ब्रांड का नाम:</label>
-                <input type="text" name="currentBrandDisplayed" placeholder="Write 'Vacant' if blank" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-            <div>
-                <label class="block font-bold mb-1.5 text-gray-900 text-xs sm:text-sm md:text-base">30. Monthly/Annual rental fee / मासिक/वार्षिक किराया शुल्क:</label>
-                <input type="text" name="rentalFee" placeholder="Fee amount / शुल्क राशि" class="w-full p-2.5 sm:p-3 bg-[#ffffff]/40 backdrop-blur-sm border border-amber-300 rounded placeholder-gray-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#7E1906] focus:bg-[#ffffff]/60 transition">
-            </div>
-        </div>
-    </section>
-
-   <!-- DOCUMENT ATTACHMENT CHECKLIST (Responsive Table) -->
-<section class="bg-transparent rounded-lg shadow-sm border border-amber-300 overflow-hidden">
-    <div class="section-header px-3 sm:px-5 py-2.5 text-[#FFD700] font-bold text-xs sm:text-sm md:text-base bg-[#7E1906]/80 backdrop-blur-sm tracking-wide">
-        Document Upload / Attachment Checklist (दस्तावेज़ संलग्न सूची)
-    </div>
-    <div class="p-2 sm:p-5 overflow-x-auto">
-        <table class="w-full text-left text-xs sm:text-sm border-collapse text-gray-900 min-w-[500px]">
-            <thead>
-                <tr class="bg-transparent text-[#7E1906] font-bold border-b border-amber-300 text-xs sm:text-sm md:text-base">
-                    <th class="p-2 sm:p-3 border border-amber-300 w-12 text-center">S.N</th>
-                    <th class="p-2 sm:p-3 border border-amber-300">Document Required / आवश्यक दस्तावेज़</th>
-                    <th class="p-2 sm:p-3 border border-amber-300 text-center w-20">Attached?</th>
-                    <th class="p-2 sm:p-3 border border-amber-300">Upload File / फ़ाइल</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-amber-300/50">
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">1</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Copy of signed Agreement (हस्ताक्षरित इकरारनामा की प्रति)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_1" onclick="handleCheckboxClick(1, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_1" name="file_1" onchange="autoTickCheck(1, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">2</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Date of Agreement Proof (इकरारनामा निष्पादन तिथि प्रमाण)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_2" onclick="handleCheckboxClick(2, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_2" name="file_2" onchange="autoTickCheck(2, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">3</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Extension Claim document (लाइसेंस विस्तार संबंधी दस्तावेज़)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_3" onclick="handleCheckboxClick(3, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_3" name="file_3" onchange="autoTickCheck(3, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">4</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Photograph of the hoarding site (होर्डिंग/स्थल का वर्तमान स्पष्ट चित्र)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_4" onclick="handleCheckboxClick(4, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_4" name="file_4" onchange="autoTickCheck(4, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">5</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Copy of PMC Licence (पटना नगर निगम विज्ञापन लाइसेंस की प्रति)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_5" onclick="handleCheckboxClick(5, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_5" name="file_5" onchange="autoTickCheck(5, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">6</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Structural Safety Certificate (संरचनात्मक सुरक्षा प्रमाणपत्र)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_6" onclick="handleCheckboxClick(6, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_6" name="file_6" onchange="autoTickCheck(6, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">7</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Agency KYC PAN Card (एजेंसी का पैन कार्ड)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_7" onclick="handleCheckboxClick(7, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_7" name="file_7" onchange="autoTickCheck(7, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">8</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">GST Registration Certificate (जीएसटी पंजीकरण प्रमाणपत्र)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_8" onclick="handleCheckboxClick(8, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_8" name="file_8" onchange="autoTickCheck(8, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">9</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Company Registration Certificate (कंपनी/फर्म पंजीकरण प्रमाणपत्र)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_9" onclick="handleCheckboxClick(9, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_9" name="file_9" onchange="autoTickCheck(9, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">10</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Registered Address Proof (पंजीकृत कार्यालय पते का प्रमाण)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_10" onclick="handleCheckboxClick(10, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_10" name="file_10" onchange="autoTickCheck(10, this)" class="w-full text-xs bg-transparent"></td></tr>
-                <tr class="bg-[#ffffff]/30 backdrop-blur-sm hover:bg-[#ffffff]/50 transition"><td class="p-2 sm:p-3 border border-amber-300 font-bold text-center">11</td><td class="p-2 sm:p-3 border border-amber-300 font-semibold">Authorised Signatory ID Proof (अधिकृत हस्ताक्षरकर्ता का पहचान पत्र)</td><td class="p-2 sm:p-3 border border-amber-300 text-center"><input type="checkbox" id="check_11" onclick="handleCheckboxClick(11, this)" class="h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer"></td><td class="p-2 sm:p-3 border border-amber-300"><input type="file" id="file_11" name="file_11" onchange="autoTickCheck(11, this)" class="w-full text-xs bg-transparent"></td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-    <!-- DECLARATION & SUBMISSION -->
-    <section class="bg-transparent p-3 sm:p-5 rounded-lg border border-amber-300 space-y-4 sm:space-y-5">
-        <div class="flex items-start space-x-3 text-xs sm:text-sm bg-[#ffffff]/40 backdrop-blur-sm p-3 sm:p-4 rounded-lg">
-            <input type="checkbox" name="declarationAccepted" required class="mt-1 h-4 sm:h-5 w-4 sm:w-5 text-[#7E1906] cursor-pointer">
-            <label class="text-gray-900 font-medium leading-relaxed">
-                <strong>Declaration / घोषणा:</strong> I/We hereby declare that the information and documents furnished above are true and correct to the best of my/our knowledge. I/We understand that any hoarding for which this questionnaire and required documents are not submitted within the stipulated time may be treated as unauthorised/illegal under the <strong>Bihar Municipal Act, 2007</strong>.<br><br>
-                (मैं/हम एतद्द्वारा घोषणा करते हैं कि ऊपर दी गई जानकारी और दस्तावेज़ मेरी/हमारी सर्वोत्तम जानकारी के अनुसार सत्य और सही हैं। मैं/हम समझते हैं कि जिस होर्डिंग के लिए यह प्रश्नावली और आवश्यक दस्तावेज़ निर्धारित समय के भीतर जमा नहीं किए जाते हैं, उसे <strong>बिहार नगरपालिका अधिनियम, 2007</strong> के तहत अनधिकृत/अवैध माना जा सकता है।)
-            </label>
-        </div>
-
-        <button type="submit" id="submitBtn" class="w-full bg-[#7E1906]/80 hover:bg-[#7E1906] backdrop-blur-md text-[#FFD700] font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg shadow-xl transition text-base sm:text-lg border border-amber-400 tracking-wider">
-            Submit Survey Questionnaire / सर्वेक्षण प्रश्नावली जमा करें 🚩
-        </button>
-    </section>
-
-</form>
-
-<!-- Success / Error Popup Modal -->
-<div id="statusModalOverlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-2xl max-w-sm w-full p-6 sm:p-8 text-center border-2 border-amber-400 transform transition-all">
-        <div id="statusModalIcon" class="text-5xl sm:text-6xl mb-3"></div>
-        <h3 id="statusModalTitle" class="text-lg sm:text-xl font-bold mb-2 text-gray-900"></h3>
-        <p id="statusModalMessage" class="text-sm sm:text-base text-gray-700 mb-5"></p>
-        <button id="statusModalCloseBtn" class="bg-[#7E1906] hover:bg-[#9E2108] text-[#FFD700] font-bold py-2.5 px-6 rounded-lg shadow-md transition tracking-wide">
-            OK
-        </button>
-    </div>
-</div>
         </main>
     </div>
 
     <!-- JAVASCRIPT VALIDATION & AUTO-TICK LOGIC -->
     <script>
-
-
-
-function autoTickCheck(id, inputElement) {
-        const checkbox = document.getElementById('check_' + id);
-        if (inputElement.files && inputElement.files.length > 0) {
-            checkbox.checked = true;
-        } else {
-            checkbox.checked = false;
-        }
-    }
-
-    // 2. Strict Checkbox Logic - Direct click control aur untick karne par file remove karna
-    function handleCheckboxClick(id, checkboxElement) {
-        const fileInput = document.getElementById('file_' + id);
-        
-        // Condition A: Bina file upload ke manual click kiya toh check rok kar alert dega
-        if (checkboxElement.checked && (!fileInput.files || fileInput.files.length === 0)) {
-            checkboxElement.checked = false; 
-            alert("Kripya pehle file upload karein! / Please upload a file first.");
-        } 
-        // Condition B: Uploaded file ke baad user untick karega toh file clear ho jayegi
-        else if (!checkboxElement.checked) {
-            fileInput.value = ''; 
-        }
-    }
-
-
-
-
-
-        // 1. Auto Tick Checkbox when File Uploaded
-        function autoTickCheck(rowNumber, fileInput) {
-            const checkBox = document.getElementById(`check_${rowNumber}`);
-            if (fileInput.files && fileInput.files.length > 0) {
-                checkBox.checked = true;
+        function autoTickCheck(id, inputElement) {
+            const checkbox = document.getElementById('check_' + id);
+            if (inputElement.files && inputElement.files.length > 0) {
+                checkbox.checked = true;
             } else {
-                checkBox.checked = false;
+                checkbox.checked = false;
             }
         }
 
-        // 2. PAN Card Formatting: Capitalize & Max 10 alphanumeric
+        function handleCheckboxClick(id, checkboxElement) {
+            const fileInput = document.getElementById('file_' + id);
+            
+            if (checkboxElement.checked && (!fileInput.files || fileInput.files.length === 0)) {
+                checkboxElement.checked = false; 
+                alert("Kripya pehle file upload karein! / Please upload a file first.");
+            } 
+            else if (!checkboxElement.checked) {
+                fileInput.value = ''; 
+            }
+        }
+
         function formatPAN(input) {
             input.value = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
         }
 
-        // 3. GST Formatting: Capitalize & Max 15 alphanumeric
         function formatGST(input) {
             input.value = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
         }
 
-        // 4. Phone Number Formatting: Digits only, Max 10 digits
         function formatPhone(input) {
             input.value = input.value.replace(/[^0-9]/g, '');
         }
 
-        // 5. GPS Coordinates Filtering (Numbers, Comma, Decimal Point)
         function formatGPS(input) {
             input.value = input.value.replace(/[^0-9.,\s-]/g, '');
         }
 
-        // 6. Generic Numbers Only Filter
         function formatNumbersOnly(input) {
             input.value = input.value.replace(/[^0-9]/g, '');
         }
 
-        // 7. Form Submission - sends all fields + uploaded files to the backend API
         const surveyForm = document.getElementById('surveyForm');
         const submitBtn = document.getElementById('submitBtn');
         const statusModalOverlay = document.getElementById('statusModalOverlay');
@@ -540,7 +627,6 @@ function autoTickCheck(id, inputElement) {
         }
 
         statusModalCloseBtn.addEventListener('click', hideStatusModal);
-        // Close modal if user clicks on the dark overlay outside the box
         statusModalOverlay.addEventListener('click', function (e) {
             if (e.target === statusModalOverlay) hideStatusModal();
         });
@@ -548,7 +634,6 @@ function autoTickCheck(id, inputElement) {
         surveyForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // Native validation (required fields, declaration checkbox, etc.)
             if (!surveyForm.checkValidity()) {
                 surveyForm.reportValidity();
                 return;
@@ -571,7 +656,6 @@ function autoTickCheck(id, inputElement) {
                 if (response.ok && result.success) {
                     showStatusModal('Survey submitted successfully! / सर्वेक्षण सफलतापूर्वक जमा हो गया है।', false);
                     surveyForm.reset();
-                    // Reset auto-ticked checkboxes since file inputs were cleared
                     for (let i = 1; i <= 11; i++) {
                         const cb = document.getElementById('check_' + i);
                         if (cb) cb.checked = false;
@@ -591,5 +675,4 @@ function autoTickCheck(id, inputElement) {
     </script>
 
 </body>
-
 </html>
